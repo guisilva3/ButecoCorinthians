@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:composition template="/template.xhtml">
+        <ui:define name="content">
+            <div class="text-center">
+                <h1>Listando Livro</h1>
+                
+                <h:form id="livroFrm">
+                            <h:panelGrid id="livroGrid" columns="2">
+                                <h:outputLabel value="Marca:" />
+                                <h:inputText id="tituloInput" value="#{livroBean.livro.marca}" />
+                                <h:outputLabel value="Cidade:" />
+                                <h:inputText id="autorInput" value="#{livroBean.livro.cidade}" />
+                                <h:outputLabel value="Valor:" />
+                                <h:inputText id="editoraInput" value="#{livroBean.livro.valor}" />
+                                <h:outputLabel value="Tipo da Cerveja:" />
+                                <h:inputText id="tipoInput" value="#{livroBean.livro.tipo}" />
+                                <h:outputLabel value="Categoria:" />
+                                <h:inputText id="categoriaInput" value="#{livroBean.livro.categoria}" />
+                            </h:panelGrid>
+                    <h:commandButton id="saveBtn" value="Salvar" action="#{livroBean.saveLivro()}" />
+                </h:form>
+            </div>
+        </ui:define>
+    </ui:composition>
+</html>
